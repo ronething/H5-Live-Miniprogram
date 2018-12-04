@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>video 详解</title>
+</head>
+
+<body>
+	<!-- 基础用法 -->
+	<video src="./test.mp4" width="400" height="225" controls controlslist='nodownload'></video>
+	<!-- 贴图 -->
+	<video src="./test.mp4" width="400" height="225" controls poster="./pic.jpg"></video>
+	<!-- 自动播放 -->
+	<video src="./test.mp4" width="400" height="225" autoplay controls></video>
+	<!-- 静音🔇 -->
+	<!-- 移动端非静音无法自动播放 -->
+	<video src="./test.mp4" width="400" height="225" muted controls controlslist='nodownload'></video>
+	<!-- 循环♻️播放 -->
+	<video src="./test.mp4" width="400" height="225" loop controls controlslist='nodownload'></video>
+	<!-- 预加载 -->
+	<video src="./test.mp4" width="400" height="225" preload controls controlslist='nodownload'></video>
+	<!-- 音量🔊控制 -->
+	<video src="./test.mp4" id="_volume" width="400" height="225" controls controlslist='nodownload'></video>
+	<!-- 时间控制 -->
+	<video src="./test.mp4" id="_time" width="400" height="225" controls controlslist='nodownload'></video>
+	<!-- 播放地址切换 -->
+	<video src="./test.mp4" id="_src" width="400" height="225" controls controlslist='nodownload'></video>
+	<!-- 备用地址切换 -->
+	<video id="_source" width="400" height="225" controls controlslist='nodownload'>
+		<source src="./test1.mp4" type="video/mp4">
+		<source src="./test.mp4" type="video/mp4">
+	</video>
+
+
+</body>
+<!-- 音量控制 -->
+<script type="text/javascript">
+	var v = document.getElementById("_volume");
+	v.volume = 0.3;
+</script>
+<!-- 播放时间控制 -->
+<script type="text/javascript">
+	var v_1 = document.getElementById("_time");
+	// console.log(v_1.currentTime);
+	// 单位为秒/s
+	v_1.currentTime = 10;
+</script>
+<!-- 播放地址切换 -->
+<script type="text/javascript">
+	var v_2 = document.getElementById("_src");
+	// console.log(v_2.src);
+	setTimeout(function () {
+		v_2.src = "./test_1.mp4";
+	}, 2000);
+</script>
+<!-- 备用地址切换 -->
+<script type="text/javascript">
+	var v_3 = document.getElementById("_source");
+	setTimeout(function(){
+		console.log(v_3.currentSrc);
+	},1000);
+</script>
+
+</html>

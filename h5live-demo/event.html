@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>video 事件</title>
+</head>
+
+<body>
+    <video id="vs" src="./test.mp4" width="400" height="225" controls controlslist='nodownload'></video>
+</body>
+<script type="text/javascript">
+    var v = document.getElementById("vs");
+    // loadstart
+    v.addEventListener("loadstart", function (e) {
+        console.log("loadstart", v.duration);
+    });
+    // durationchange
+    v.addEventListener("durationchange", function (e) {
+        console.log("durationchange", v.duration);
+    });
+    // loadedmetadata
+    v.addEventListener("loadedmetadata", function (e) {
+        console.log("loadedmetadata");
+    });
+    // loadeddata
+    v.addEventListener("loadeddata", function (e) {
+        console.log("loadeddata");
+    });
+    // progress
+    v.addEventListener("progress", function (e) {
+        console.log("progress");
+    });
+    // canplay
+    v.addEventListener("canplay", function (e) {
+        console.log("canplay");
+    });
+    // canplaythrough
+    v.addEventListener("canplaythrough", function (e) {
+        console.log("canplaythrough");
+    });
+    // play
+    v.addEventListener("play", function (e) {
+        console.log("play");
+    });
+    // pause
+    v.addEventListener("pause", function (e) {
+        console.log("pause");
+    });
+    // seeking
+    v.addEventListener("seeking", function (e) {
+        console.log("seeking");
+    });
+    // seeked
+    v.addEventListener("seeked", function (e) {
+        console.log("seeked");
+    });
+    // waiting
+    v.addEventListener("waiting", function (e) {
+        console.log("waiting");
+    });
+    // playing
+    v.addEventListener("playing", function (e) {
+        console.log("playing");
+    });
+    // timeupdate
+    v.addEventListener("timeupdate", function (e) {
+        console.log("timeupdate");
+    });
+    // ended
+    v.addEventListener("ended", function (e) {
+        console.log("ended");
+    });
+    // error
+    v.addEventListener("error", function (e) {
+        console.log("error", e);
+    });
+</script>
+
+</html>
