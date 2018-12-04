@@ -85,6 +85,10 @@ rtmp{
 
 -   `rtmp`
 
+启动 `server` 作用相当于方法一的 `nginx`
+
+![](https://i.loli.net/2018/12/05/5c06c93f59032.png)
+
 ```
 ffmpeg -re -i test.mp4 -vcodec libx264 -acodec aac -f flv rtmp://127.0.0.1:1935/rtmplive/rtmp
 ```
